@@ -22,17 +22,12 @@ exports.handler = (event, context, callback) => {
 
     var url = 'https://s3.us-east-2.amazonaws.com/jcf-iot-button/turrible.twiml'
     var jon = '***REMOVED***'
-    var kevin = '***REMOVED***'
 
     client.calls.create({
         url: url,
-        to: kevin,
+        to: jon,
         method: 'GET',
         from:'***REMOVED***'
-    }, function(err, call) {
-        console.log(err)
-        console.log('This call\'s unique ID is: ' + call.sid);
-        console.log('This call was created at: ' + call.dateCreated);
-    });
+    }, callback);
 };
 
