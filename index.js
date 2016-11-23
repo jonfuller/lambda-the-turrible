@@ -15,9 +15,6 @@
  * http://docs.aws.amazon.com/iot/latest/developerguide/iot-lambda-rule.html
  */
 exports.handler = (event, context, callback) => {
-    console.log('Received event:', event.clickType, event.batteryVoltage, event.serialNumber);
-    console.log(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-
     var client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 
     var url = 'https://s3.us-east-2.amazonaws.com/jcf-iot-button/turrible.twiml'
