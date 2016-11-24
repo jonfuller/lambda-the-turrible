@@ -24,7 +24,7 @@ exports.handler = (event, context, callback) => {
         url: url,
         to: jon,
         method: 'GET',
-        from:'***REMOVED***'
+        from: process.env.TWILIO_FROM
     }, callback);
 };
 
