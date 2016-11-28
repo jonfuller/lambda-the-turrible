@@ -18,11 +18,10 @@ exports.handler = (event, context, callback) => {
     var client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 
     var url = 'https://s3.us-east-2.amazonaws.com/jcf-iot-button/turrible.twiml'
-    var jon = '***REMOVED***'
 
     client.calls.create({
         url: url,
-        to: jon,
+        to: process.env.TO_NUMBER,
         method: 'GET',
         from: process.env.TWILIO_FROM
     }, callback);

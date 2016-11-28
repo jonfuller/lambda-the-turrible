@@ -15,6 +15,7 @@ Ever wanted one of those Staples Easy Buttons to say custom stuff? This won't qu
     TWILIO_ACCOUNT_SID=<secret>
     TWILIO_AUTH_TOKEN=<secret>
     TWILIO_FROM=<twilio authorized from #>
+    TO_NUMBER=<number to call>
 
 ### AWS
 
@@ -38,9 +39,11 @@ Ever wanted one of those Staples Easy Buttons to say custom stuff? This won't qu
     EXCLUDE_GLOBS="space separated glob list"
     PACKAGE_DIRECTORY=build
 
-S3 bucket with the contents of `for_s3`
+S3 bucket with the contents of `for_s3` (you'll probably need to install the [AWS Command Line Interface](https://aws.amazon.com/cli/))
 
-    aws s3 cp for_s3 s3://jcfuller/turrible/ --recursive
+    aws s3 cp for_s3 s3://<path to an s3 bucket of your choice>/ --recursive
+
+Make sure you then make that bucket/directory public, and then point the URL in the `TwiML` file your newly uploaded sound file.
 
 ## Test/Run/Deploy
 
